@@ -2892,8 +2892,8 @@ static  void AppTask5(void* p_arg)
 
 
 
-
-static  void AppTask6(void* p_arg)//此任务专门处理键盘快追（正转或者反转功能！！）added by sjw
+//此任务专门处理键盘快追（正转或者反转功能！！）added by sjw
+static  void AppTask6(void* p_arg)
 {
 	INT8U err;	
 	
@@ -2948,9 +2948,17 @@ static  void AppTask6(void* p_arg)//此任务专门处理键盘快追（正转或者反转功能！！
 			 }
 			 
 			 */
+			if(MotorZZ_Flag){
+				  EnterEastNormalRun();
+			}else if(MotorFZ_Flag){
+				  EnterEastFzRun();
+			}else if((!MotorZZ_Flag)&&(!MotorZZ_Flag)){
+				  OSTimeDlyHMSM(0, 0, 0, 100);
+			}
 			 
 			 
-			 OSTimeDlyHMSM(0, 0, 0, 100);
+			 
+			 OSTimeDlyHMSM(0, 0, 0, 60);
 		  
 		
 	}

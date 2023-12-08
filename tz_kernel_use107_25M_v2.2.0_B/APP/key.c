@@ -17,6 +17,11 @@ INT8U Report_Time[24]={0,0,0,0,0,0,0,            //系统默认报时开关状态！！added
 	                     1,1,1,1,1,1,
 											 0,0,1,1,1,1,1,1,
                        0,0,0};
+
+											 
+											 
+extern  INT8U  MotorZZ_Flag,MotorFZ_Flag;
+
 extern  INT8U  IntKeyActionValid;
 extern INT8U  PowerOnFLag;
 
@@ -33,7 +38,9 @@ INT8U     TimeStore[6];
 				 
 enum   KeyRun_Order  Key_Subclock_State1=WALK;//按键操作命令
   
-												 
+extern void  EnterEastNormalRun(void);
+
+extern void  EnterEastFzRun();									 
 extern  INT8U  Rythem_Number,Strike_Number;											
 extern   struct   Timdata_sub     Subclock1,Subclock2;
 void     SetDs3231_Time(INT8U,INT8U,INT8U);
@@ -662,14 +669,27 @@ void  set_clock_tm(INT8U *tm)
 								 break;
 								 case 1 :
 									  PowerOnFLag=1;
+								    MotorFZ_Flag=0;
+								    MotorZZ_Flag=1;
 									  Key_Subclock_State1=RUN_FORWARD; //正追1面          
 								 break;
 								 case 2 :
 									  PowerOnFLag=1;
+								    if(MotorZZ_Flag){
+											  EnterEastNormalRun();
+										}else if(MotorFZ_Flag){
+											  EnterEastFzRun();
+										}
+										MotorZZ_Flag=0;
+										MotorFZ_Flag=0;
+								 
 									  Key_Subclock_State1=STOP;         //停1面
 								 break;
 								 case 3 :
 									 PowerOnFLag=1;
+								   MotorZZ_Flag=0;
+								   MotorFZ_Flag=1;
+
 									 Key_Subclock_State1=RUN_REVERSE; //倒追1面         
 								 break;
 								 case 4 :
