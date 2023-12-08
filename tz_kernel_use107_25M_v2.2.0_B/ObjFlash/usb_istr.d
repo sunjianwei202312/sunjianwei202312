@@ -1,0 +1,11 @@
+..\objflash\usb_istr.o: UsbFiles\usb_istr.c
+..\objflash\usb_istr.o: UsbFiles\usb_type.h
+..\objflash\usb_istr.o: UsbFiles\usb_conf.h
+..\objflash\usb_istr.o: UsbFiles\usb_regs.h
+..\objflash\usb_istr.o: ..\Libraries\CMSIS\Core\CM3\stm32f10x.h
+..\objflash\usb_istr.o: UsbFiles\usb_pwr.h
+..\objflash\usb_istr.o: ..\Libraries\CMSIS\Core\CM3\stm32f10x_type.h
+..\objflash\usb_istr.o: UsbFiles\usb_core.h
+..\objflash\usb_istr.o: UsbFiles\usb_istr.h
+..\objflash\usb_istr.o: UsbFiles\usb_init.h
+..\objflash\usb_istr.o: UsbFiles\usb_int.h

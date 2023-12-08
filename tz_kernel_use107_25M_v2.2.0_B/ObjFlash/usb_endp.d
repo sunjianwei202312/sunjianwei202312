@@ -1,0 +1,13 @@
+..\objflash\usb_endp.o: UsbFiles\usb_endp.c
+..\objflash\usb_endp.o: UsbFiles\usb_lib.h
+..\objflash\usb_endp.o: UsbFiles\usb_type.h
+..\objflash\usb_endp.o: UsbFiles\usb_conf.h
+..\objflash\usb_endp.o: UsbFiles\usb_regs.h
+..\objflash\usb_endp.o: ..\Libraries\CMSIS\Core\CM3\stm32f10x.h
+..\objflash\usb_endp.o: UsbFiles\usb_def.h
+..\objflash\usb_endp.o: UsbFiles\usb_core.h
+..\objflash\usb_endp.o: UsbFiles\usb_init.h
+..\objflash\usb_endp.o: UsbFiles\usb_mem.h
+..\objflash\usb_endp.o: UsbFiles\usb_int.h
+..\objflash\usb_endp.o: UsbFiles\usb_bot.h
+..\objflash\usb_endp.o: UsbFiles\usb_istr.h
